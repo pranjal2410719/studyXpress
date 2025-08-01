@@ -13,9 +13,6 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   // Disable server-side features for static export
-  experimental: {
-    appDir: true,
-  },
   // Configure basePath if deploying to a subdirectory
   // basePath: '/studyxpress',
 }

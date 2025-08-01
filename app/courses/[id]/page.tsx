@@ -24,6 +24,19 @@ import {
   Globe,
 } from "lucide-react"
 
+// Generate static params for static export
+export async function generateStaticParams() {
+  // Return an array of course IDs that should be pre-generated
+  // In a real app, this would fetch from your API or database
+  return [
+    { id: '1' },
+    { id: '2' },
+    { id: '3' },
+    { id: '4' },
+    { id: '5' },
+  ]
+}
+
 const courseData = {
   id: 1,
   title: "Complete NEET Biology Masterclass",
@@ -114,7 +127,7 @@ const courseData = {
   ],
 }
 
-export default function CourseDetailPage() {
+export default function CourseDetailPage({ params }: { params: { id: string } }) {
   const [activeTab, setActiveTab] = useState("overview")
   const [isEnrolled, setIsEnrolled] = useState(false)
   const [currentLesson, setCurrentLesson] = useState(0)
