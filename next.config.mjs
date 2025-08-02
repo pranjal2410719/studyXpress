@@ -13,8 +13,8 @@ const nextConfig = {
   output: 'export',
   trailingSlash: true,
   // Disable server-side features for static export
-  // Configure basePath if deploying to a subdirectory
-  // basePath: '/studyxpress',
+  // Configure basePath for GitHub Pages
+  basePath: process.env.NODE_ENV === 'production' && process.env.GITHUB_ACTIONS ? '/studyXpress' : '',
 }
 
 export default nextConfig
